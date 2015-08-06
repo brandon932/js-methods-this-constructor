@@ -58,6 +58,7 @@ describe('#full', function() {
     cab.addPassenger('George Harrison');
   });
 
+
   it('returns true when the passengerCount is at the maximum number of passengers', function() {
     cab.addPassenger('Yoko Ono');
 
@@ -69,15 +70,15 @@ describe('#full', function() {
   });
 });
 
-// describe('#dropOffPassengers', function() {
-//   it('removes all stored passengers from the Taxi instance', function() {
-//     var cab = new Taxi('Ringo Starr', 4);
-//     cab.addPassenger('Paul McCartney');
-//     cab.addPassenger('John Lennon');
-//     cab.addPassenger('George Harrison');
-//
-//     cab.dropOffPassengers();
-//
-//     expect(cab.passengers).toEqual([]);
-//   });
-// });
+describe('#dropOffPassengers', function() {
+  it('removes all stored passengers from the Taxi instance', function() {
+    var cab = new Taxi('Ringo Starr', 4);
+    cab.addPassenger('Paul McCartney');
+    cab.addPassenger('John Lennon');
+    cab.addPassenger('George Harrison');
+
+    cab.dropOffPassengers();
+
+    expect(cab.passengers).toEqual([]);
+  });
+});

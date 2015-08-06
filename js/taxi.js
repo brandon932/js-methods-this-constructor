@@ -5,20 +5,28 @@ function Taxi(driverName, maxNumberOfPassengers) {
 }
 
 Taxi.prototype.addPassenger = function(passengerName) {
-  this.passengers.push(passengerName);
+  if (this.passengers.length < this.maxNumberOfPassengers) {
+   this.passengers.push(passengerName);
+}else {
+  console.log('full');
+}
 };
 
 Taxi.prototype.passengerCount = function(){
   return this.passengers.length;
 };
 Taxi.prototype.full = function(){
-  if (this.passengerCount === maxNumberOfPassengers) {
-    return true;
-  }else{
+  if (this.passengerCount() <= this.maxNumberOfPassengers -1) {
     return false;
+  }else{
+    return true;
   }
 };
-// cab = new Taxi("bob colins");
+Taxi.prototype.dropOffPassengers = function(){
+  this.passengers = [];
+};
+
+cab = new Taxi("bob colins", 4);
 // your code here
 
 // DO NOT MODIFY BELOW THIS COMMENT:
